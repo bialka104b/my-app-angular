@@ -1,11 +1,12 @@
 import { Input } from "@angular/core";
+import { Pilot } from "./pilot";
 import { SpaceShip } from "./space-ship";
 
 
 
 export class BomberShip extends SpaceShip {
-  
-  constructor() {
-    super('Raptor', '/assets/statek-kosmiczny.jpg');
+
+  constructor(pilot?: Pilot) {
+    super('Raptor', '/assets/statek-kosmiczny.jpg', pilot);
   }
 }

@@ -1,0 +1,33 @@
+{
+	"pilots": [
+		{
+			"id": 1,
+			"firstName": "Lee",
+			"lastName": "Adama",
+			"imageUrl": "/assets/pilot.jfif"
+		},
+		{
+			"id": 2,
+			"firstName": "Sharon",
+			"lastName": "Valerii",
+			"imageUrl": "/assets/pilot2.jfif"
+		},
+		{
+			"id": 3,
+			"firstName": "Karl",
+			"lastName": "Ahathon",
+			"imageUrl": null
+		}
+	],
+	"forbidden-names": [
+		{
+			"name": "Maruda"
+		},
+		{
+			"name": "Ciamajda"
+		},
+		{
+			"name": "Gapcio"
+		}
+	]
+}

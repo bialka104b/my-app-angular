@@ -1,8 +1,16 @@
+export interface PilotAttrs {
+  id?: number;
+  firstName: string;
+  lastName: string;
+  imageUrl: string;
+}
+
 export class Pilot {
   static defaultImageUrl = '/assets/pilot.jfif';
-  firstName = '';
-  lastName = '';
-  imageUrl = '';
+	firstName = '';
+	lastName = '';
+	imageUrl = '';
+	id?: number;
 
   get fullName(): string {
     return `${this.firstName} ${this.lastName}`;
@@ -13,8 +21,10 @@ export class Pilot {
     this.lastName = values[1];
   }
 
-  constructor(fullName: string, imageUrl = Pilot.defaultImageUrl) {
-    this.fullName = fullName;
-    this.imageUrl = imageUrl;
-  }
+	constructor(attrs: PilotAttrs) {
+		this.id = attrs.id;
+		this.firstName = attrs.firstName;
+		this.lastName = attrs.lastName;
+		this.imageUrl = attrs.imageUrl || Pilot.defaultImageUrl;
+	}
 }

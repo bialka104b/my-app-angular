@@ -12,6 +12,7 @@ import { SpaceShipService } from '../space-ship.service';
 
 export class HangarComponent implements OnInit {
   @ViewChild(PilotRoomComponent) pilotRoom!: PilotRoomComponent;
+//   @ViewChild(PilotRoomComponent) pilotRoom!: PilotRoomComponent;
   selectedPilot: Pilot | null = null;
   spaceShips = this.spaceShipService.hangarShips;
   constructor(

@@ -14,7 +14,8 @@ import { TickizePipe } from './tickize.pipe';
     CommonModule
   ],
   exports: [
-    TickizePipe
+	  TickizePipe,
+	  SpaceImageDirective
   ]
 })
 export class SharedModule { }

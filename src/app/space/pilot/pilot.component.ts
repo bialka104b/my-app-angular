@@ -11,9 +11,9 @@ export class PilotComponent implements OnInit {
 	@Input() pilot!: Pilot;
 	@Input() spaceShip!: SpaceShip;
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit(): void {
-  }
+	ngOnInit(): void {
+	}
 
 }

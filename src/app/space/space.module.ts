@@ -6,6 +6,7 @@ import { PilotComponent } from './pilot/pilot.component';
 import { PilotRoomComponent } from './pilot-room/pilot-room.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EngineersRoomComponent } from './engineers-room/engineers-room.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { EngineersRoomComponent } from './engineers-room/engineers-room.componen
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule
+	ReactiveFormsModule,
+	SharedModule,
   ],
   exports: [
     HangarComponent

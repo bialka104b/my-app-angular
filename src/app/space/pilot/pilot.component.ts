@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Pilot } from '../pilot';
+import { SpaceShip } from '../space-ship';
 
 @Component({
   selector: 'app-pilot',
@@ -7,7 +8,9 @@ import { Pilot } from '../pilot';
   styleUrls: ['./pilot.component.scss']
 })
 export class PilotComponent implements OnInit {
-  @Input() pilot!: Pilot;
+	@Input() pilot!: Pilot;
+	@Input() spaceShip!: SpaceShip;
+
   constructor() { }
 
   ngOnInit(): void {

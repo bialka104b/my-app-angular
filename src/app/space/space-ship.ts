@@ -10,7 +10,7 @@ export class SpaceShip {
     activeWeapons = true;
     constructor(modelName: string, imageUrl: string, pilot?: Pilot) {
     this.modelName = modelName;
-      this.imageUrl = imageUrl;
-      this.pilot = pilot;
-  }
+		this.imageUrl = imageUrl;
+		this.pilot = pilot;
+	}
 }

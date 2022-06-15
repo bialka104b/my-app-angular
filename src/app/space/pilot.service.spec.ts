@@ -1,16 +1,93 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
+import { map, Observable, of } from "rxjs";
+import { environment } from 'src/environments/environment';
+import { PilotAttrs } from './pilot';
 
 import { PilotService } from './pilot.service';
 
-describe('PilotService', () => {
-  let service: PilotService;
+export class HttpClientMock {
+  get() { }
+  post() { }
+  put() { }
+  delete() { }
+}
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(PilotService);
-  });
+fdescribe('PilotService', () => {
+		let pilotService: PilotService
+		let http: HttpClient;
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+		beforeEach(() => {
+			TestBed.configureTestingModule({
+			providers: [
+				{provide: HttpClient, useClass: HttpClientMock},
+				PilotService
+			]
+			});
+			http = TestBed.inject(HttpClient);
+			pilotService = TestBed.inject(PilotService);
+		});
+
+		describe('getPilot', () => {
+			beforeEach(() => {
+				const pilotAttrs = {id: 1, firstName: 'Mike', lastName: 'Tomsky', imageUrl: ''};
+				spyOn(http, 'get').and.returnValue(of(pilotAttrs));
+			});
+
+			it('should make a request for pilot', () => {
+				pilotService.getPilot(1);
+				expect(http.get).toHaveBeenCalledWith(`${environment.apiUrl}/pilots/1`);
+			});
+
+			// tutaj testy...
+		});
+
+		describe('savePilot', () => {
+			let pilotAttrs: PilotAttrs;
+
+			describe('when pilot has id', () => {
+				beforeEach(() => {
+					pilotAttrs = {id: 1, firstName: 'Mike', lastName: 'Tomsky', imageUrl: ''};
+					spyOn(http, 'put').and.returnValue(of(pilotAttrs));
+				});
+
+				it('should make put request', () => {
+					pilotService.savePilot(pilotAttrs);
+					expect(http.put).toHaveBeenCalledWith(`${environment.apiUrl}/pilots/1`, pilotAttrs);
+				});
+			});
+
+			describe('when pilot has not id', () => {
+				beforeEach(() => {
+					pilotAttrs = {firstName: 'Mike', lastName: 'Tomsky', imageUrl: ''};
+					spyOn(http, 'post').and.returnValue(of(pilotAttrs));
+				});
+
+				it('should make post request', () => {
+					pilotService.savePilot(pilotAttrs);
+					expect(http.post).toHaveBeenCalledWith(`${environment.apiUrl}/pilots`, pilotAttrs);
+				});
+			});
+			
+		});
 });
+// fdescribe('PilotService', () => {
+
+
+// 	// beforeEach(() => {
+// 	// 	TestBed.configureTestingModule({});
+// 	// 	service = TestBed.inject(PilotService);
+// 	// });
+
+// 	describe('getPilot', () => {
+// 		beforeEach(() => {
+// 			const pilotAttrs = {id: 1, firstName: 'Mike', lastName: 'Tomsky', imageUrl: ''};
+// 			spyOn(http, 'get').and.returnValue(of(pilotAttrs));
+// 		});
+// 	// tutaj testy...
+// 	});
+
+// 	it('should be created', () => {
+// 		expect(service).toBeTruthy();
+// 	});
+// });

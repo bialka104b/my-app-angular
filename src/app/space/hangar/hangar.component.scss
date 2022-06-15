@@ -19,3 +19,17 @@ a {
 a.active {
   color: orange;
 }
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+nav a.active {
+  color: darkorange;
+}

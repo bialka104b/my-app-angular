@@ -6,7 +6,7 @@ import { A2sCommModule } from 'a2s-comm';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-  
+
 export class AppComponent {
   title = 'my-app';
 }

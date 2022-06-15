@@ -12,16 +12,16 @@ import { BlackHoleComponent } from './black-hole/black-hole.component';
 @NgModule({
 	declarations: [
 		AppComponent,
-  BlackHoleComponent,
+  		BlackHoleComponent,
 	],
-  imports: [
+  	imports: [
 		BrowserModule,
 		SpaceModule,
 		AppRoutingModule,
 		A2sCommModule,
 		HttpClientModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  	],
+  	providers: [],
+  	bootstrap: [AppComponent]
 })
 export class AppModule { }

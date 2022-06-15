@@ -2,6 +2,6 @@ import { Pilot } from './pilot';
 
 describe('Pilot', () => {
   it('should create an instance', () => {
-    expect(new Pilot()).toBeTruthy();
+	  expect(new Pilot({firstName:'', lastName:'', imageUrl:''})).toBeTruthy();
   });
 });

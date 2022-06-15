@@ -9,15 +9,25 @@ import { EngineersRoomComponent } from './engineers-room/engineers-room.componen
 import { SharedModule } from '../shared/shared.module';
 import { DestructionRoomComponent } from './destruction-room/destruction-room.component';
 import { SpaceRoutingModule } from './space-routing.module';
+import { PilotFormComponent } from './pilot-form/pilot-form.component';
 
 
 @NgModule({
- declarations: [HangarComponent, SpaceShipComponent, PilotRoomComponent, PilotComponent, EngineersRoomComponent, DestructionRoomComponent],
+	declarations: [
+	 HangarComponent,
+    SpaceShipComponent,
+    PilotRoomComponent,
+    PilotComponent,
+    EngineersRoomComponent,
+    DestructionRoomComponent,
+    PilotFormComponent
+ ],
   imports: [
 	  CommonModule,
 	  SpaceRoutingModule,
-	ReactiveFormsModule,
-	SharedModule,
+		ReactiveFormsModule,
+	  SharedModule,
+
   ],
   exports: [
     HangarComponent
